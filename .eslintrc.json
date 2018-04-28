@@ -1,0 +1,42 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "plugins": [
+    "babel",
+    "flowtype",
+    "prettier"
+  ],
+  "extends": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": ["error", {
+      "bracketSpacing": false,
+      "trailingComma": "all"
+    }],
+    "eqeqeq": ["error", "smart"],
+    "no-await-in-loop": "error",
+    "no-console": "error",
+    "no-unused-vars": "error",
+    "require-await": "error",
+    "flowtype/boolean-style": "error",
+    "flowtype/define-flow-type": "error",
+    "flowtype/no-dupe-keys": "error",
+    "flowtype/no-primitive-constructor-types": "error",
+    "flowtype/object-type-delimiter": "error",
+    "flowtype/require-valid-file-annotation": ["error", "always"],
+    "flowtype/use-flow-type": "error"
+  }
+}

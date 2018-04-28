@@ -1,0 +1,57 @@
+{
+  "name": "@prodo-ai/js-caching",
+  "version": "1.0.0",
+  "description": "JS utilities for caching",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "repository": "git@github.com:prodo-ai/js-caching.git",
+  "author": "Prodo Tech Ltd.",
+  "license": "UNLICENSED",
+  "private": false,
+  "scripts": {
+    "eslint": "eslint src test --color && echo 'No errors.'",
+    "flow": "flow status",
+    "prepack": "npm run prepack:babel && npm run prepack:flow",
+    "prepack:babel": "babel src/ -d lib",
+    "prepack:flow": "find src -name *.js -type f | cut -d'/' -f2 | xargs -I '{}' cp src/{} lib/{}.flow",
+    "test": "npm run test:ava && npm run test:eslint && npm run test:flow",
+    "test:ava": "ava --color --verbose --timeout=3000 test",
+    "test:eslint": "npm run eslint",
+    "test:flow": "npm run flow"
+  },
+  "dependencies": {
+    "@prodo-ai/js-async": "^1.0.0",
+    "@prodo-ai/js-timing": "^1.0.3",
+    "babel-runtime": "^6.23.0",
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^8.0.1",
+    "babel-plugin-transform-async-generator-functions": "^6.22.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.22.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-flowtype": "^2.46.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "flow-bin": "^0.69.0",
+    "prettier": "^1.12.1",
+    "testdouble": "^3.7.0"
+  },
+  "ava": {
+    "require": [
+      "babel-polyfill",
+      "babel-register"
+    ],
+    "babel": {
+      "extends": ".babelrc"
+    }
+  }
+}

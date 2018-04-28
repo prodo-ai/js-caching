@@ -1,0 +1,10 @@
+[include]
+
+[libs]
+
+[ignore]
+.*/node_modules/chalk/index\.js\.flow
+
+[options]
+esproposal.export_star_as=enable
+suppress_comment=\\(.\\|\n\\)*@\\(flow-ignore-line\\|expect-flow-error\\)

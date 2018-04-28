@@ -1,0 +1,18 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "node": "current"
+        },
+        "useBuiltIns": true
+      }
+    ],
+    "stage-0"
+  ],
+  "plugins": [
+    "transform-async-generator-functions",
+    "transform-flow-strip-types"
+  ]
+}
